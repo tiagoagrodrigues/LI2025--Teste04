@@ -9,26 +9,33 @@
 <body class="bg-light">
 <div class="container d-flex justify-content-center mt-5">
 <div class="col-md-3">
-<form>
-<div class="mb-3">
-<label class="form-label">Email</label>
-<input type="email" class="form-control">
-</div>
-<div class="mb-3">
-<label class="form-label">Assunto</label>
-<input type="text" class="form-control">
-</div>
-<div class="mb-3">
-<label class="form-label">Mensagem</label>
-<textarea class="form-control" rows="3"></textarea>
-</div>
-<div class="d-flex gap-2">
-<button class="btn btn-primary" type="submit">Enviar</button>
-<button class="btn btn-secondary" type="button">Cancelar</button>
-</div>
+<form class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+    <div class="valid-feedback">Email válido!</div>
+    <div class="invalid-feedback">Por favor insira um email válido.</div>
+  </div>
+  <div class="mb-3">
+    <label for="assunto" class="form-label">Assunto</label>
+    <input type="text" class="form-control" id="assunto" name="assunto" required>
+    <div class="valid-feedback">Assunto preenchido!</div>
+    <div class="invalid-feedback">Este campo é obrigatório.</div>
+  </div>
+  <div class="mb-3">
+    <label for="mensagem" class="form-label">Mensagem</label>
+    <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required></textarea>
+    <div class="valid-feedback">Mensagem preenchida!</div>
+    <div class="invalid-feedback">Este campo é obrigatório.</div>
+  </div>
+  <div class="d-flex gap-2">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+    <button class="btn btn-secondary" type="button" onclick="this.closest('form').reset()">Cancelar</button>
+  </div>
 </form>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
